@@ -16,6 +16,10 @@ import authRoutes from './src/routes/authRoutes.js';
 import cors from "cors";
 import faqsRouter from './src/routes/faqs.js';
 
+import swaggerUi from "swagger-ui-express";
+import fs from "fs"
+import path from "path"
+
 const app = express();
 
 app.use(
@@ -27,6 +31,14 @@ app.use(
 
 app.use(express.json());
 app.use(cookieParser());
+
+//Se trae el archivo json
+const swaggerDocument = JSON.parse(
+    fs.readFileSync(path.resolve("./documentacionEPAv2.json"), "utf-8")
+);
+
+//Se muestra el archivo al ingresar en /api/docs
+app.use("/api/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 app.use("/api/products", productsRoutes);
 app.use("/api/clients", clientsRoutes);
