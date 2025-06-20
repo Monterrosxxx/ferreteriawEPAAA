@@ -20,6 +20,8 @@ import swaggerUi from "swagger-ui-express";
 import fs from "fs"
 import path from "path"
 
+import salesRoutes from "./src/routes/sales.js";
+
 const app = express();
 
 app.use(
@@ -54,4 +56,5 @@ app.use("/api/brands", brandsRoutes);
 app.use("/api", authRoutes);
 app.use("/api/faqs", faqsRouter);
 
+app.use("/api/sales", salesRoutes);
 export default app;
