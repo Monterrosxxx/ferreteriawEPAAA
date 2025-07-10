@@ -11,6 +11,7 @@ import registerClientsRoutes from "./src/routes/registerClients.js";
 import recoveryPasswordRoutes from "./src/routes/recoveryPassword.js";
 import providersRoutes from "./src/routes/providers.js";
 import brandsRoutes from "./src/routes/brands.js";
+import claimsRoutes from "./src/routes/claims.js";
 import cookieParser from "cookie-parser";
 import authRoutes from './src/routes/authRoutes.js';
 import cors from "cors";
@@ -53,6 +54,7 @@ app.use("/api/registerClients", registerClientsRoutes);
 app.use("/api/recoveryPassword", recoveryPasswordRoutes);
 app.use("/api/providers", providersRoutes);
 app.use("/api/brands", brandsRoutes);
+app.use("/api/claims", claimsRoutes);
 app.use("/api", authRoutes);
 app.use("/api/faqs", faqsRouter);
 
