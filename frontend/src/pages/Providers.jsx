@@ -84,7 +84,7 @@ const Providers = ({ onLogOut, onNavigateToProducts, onNavigateToBrands, userInf
     const handleDeleteProvider = async (providerId) => {
         if (window.confirm('¿Estás seguro de que deseas eliminar este proveedor?')) {
             try {
-                const response = await fetch(`https://ferreteriaepa-1vms.onrender.com/api/providers/${providerId}`, {
+                const response = await fetch(`https://ferreteriawepaaa.onrender.com/api/providers/${providerId}`, {
                     method: 'DELETE'
                 });
 

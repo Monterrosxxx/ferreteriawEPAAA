@@ -60,7 +60,7 @@ const RegisterForm = ({onSwitchToLogin, onRegisterSuccess}) => {
         setLoading(true);
 
         try {
-            const response = await fetch('https://ferreteriaepa-1vms.onrender.com/api/registerClients', {
+            const response = await fetch('https://ferreteriawepaaa.onrender.com/api/registerClients', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
