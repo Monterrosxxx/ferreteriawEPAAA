@@ -27,7 +27,7 @@ const app = express();
 
 app.use(
     cors({
-        origin: "https://ferreteria-epa-beige.vercel.app",
+        origin: "https://ferreteriaw-epaaa.vercel.app/",
         credentials: true
     })
 );
