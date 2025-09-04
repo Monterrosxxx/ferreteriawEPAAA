@@ -23,6 +23,8 @@ import path from "path"
 
 import salesRoutes from "./src/routes/sales.js";
 
+import limiter from './src/middlewares/rateLimited.js'; // Importar el middleware de limitación de solicitudes
+
 const app = express();
 
 app.use(
@@ -35,6 +37,7 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(limiter); // Aplicar el middleware de limitación de solicitudes a todas las rutas
 //Se trae el archivo json
 const swaggerDocument = JSON.parse(
     fs.readFileSync(path.resolve("./documentacionEPAv2.json"), "utf-8")
